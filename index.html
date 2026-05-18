@@ -20,9 +20,9 @@
 
     <script>
         // Configuración de tu origen en GitHub
-        const USER = "cbresciano"; // Reemplazá con tu usuario real
-        const REPO = "Papers";            // El nombre exacto de tu repositorio
-        const PATH = "";                  // Vacío, porque los PDFs están en la raíz
+        const USER = "cbresciano"; 
+        const REPO = "Papers";            
+        const PATH = "";                  
 
         const API_URL = `https://api.github.com/repos/${USER}/${REPO}/contents/${PATH}`;
 
@@ -42,18 +42,19 @@
                     return;
                 }
 
-                container.innerHTML = ''; // Limpiar contenedor
+                container.innerHTML = ''; 
 
                 pdfFiles.forEach(file => {
                     // Limpiar el nombre del archivo físico para mostrarlo como título
                     const title = file.name.replace(/\.pdf$/i, '').replace(/_/g, ' ').replace(/-/g, ' ');
                     
+                    // Al usar ./${file.name} el navegador busca el archivo en la misma carpeta web actual
                     const paperHtml = `
                         <div class="paper-item">
-                        <a class="paper-title" href="https://${USER}.github.io/${REPO}/${file.name}" target="_blank">${title}</a>
-                        <div class="meta">Archivo: ${file.name} | Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB</div>
+                            <a class="paper-title" href="./${file.name}" target="_blank">${title}</a>
+                            <div class="meta">Archivo: ${file.name} | Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB</div>
                         </div>
-                        `;
+                    `;
                     container.innerHTML += paperHtml;
                 });
 
