@@ -50,10 +50,10 @@
                     
                     const paperHtml = `
                         <div class="paper-item">
-                            <a class="paper-title" href="${file.download_url}" target="_blank">${title}</a>
-                            <div class="meta">Archivo: ${file.name} | Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB</div>
+                        <a class="paper-title" href="https://${USER}.github.io/${REPO}/${file.name}" target="_blank">${title}</a>
+                        <div class="meta">Archivo: ${file.name} | Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB</div>
                         </div>
-                    `;
+                        `;
                     container.innerHTML += paperHtml;
                 });
 
