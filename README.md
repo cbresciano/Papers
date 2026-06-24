@@ -107,18 +107,26 @@ TNA unifies disparate fields by showing they share the exact same structural gra
 If you use the TNA framework in your research, please cite the Core Language v3 and the foundational theorem:
 
 ```bibtex
-@article{bresciano2026tna,
+@article{bresciano2026tna_core,
   title={TNA Core Language v3: The Structural Grammar of Axiomatic Necessity},
   author={Bresciano, Claudio},
   year={2026},
   publisher={Zenodo},
-  doi={10.5281/zenodo.18098558}
+  doi={10.5281/zenodo.20837120}
 }
 
 @article{bresciano2025theorem,
-  title={Theorem: Metamathematical Necessity of Axioms via Reduction to Incoherence v1.3},
+  title={The External Ground: Metamathematical Necessity of Axioms via Reduction to Incoherence v1.3},
   author={Bresciano, Claudio},
   year={2025},
   publisher={Zenodo},
   doi={10.5281/zenodo.19192655}
+}
+
+@article{bresciano2025foundations,
+  title={Theory of Axiomatic Necessity: Foundations and Closure Theorem},
+  author={Bresciano, Claudio},
+  year={2025},
+  publisher={Zenodo},
+  doi={10.5281/zenodo.18098558}
 }
