@@ -6,16 +6,16 @@ This repository contains the formal research corpus regarding the **Theory of Ax
 
 ## 📌 Featured Paper
 
-### **TNA Core Language v1: The Structural Grammar of Axiomatic Necessity**
+### **TNA Core Language v2.1: The Structural Grammar of Axiomatic Necessity**
 *Author: Claudio Bresciano*
 
-> **Abstract:** The Theory of Axiomatic Necessity (TNA) has been developed through a series of papers spanning mathematical logic, epistemology, philosophy of mind, artificial intelligence, ontology, and metaphysics. Although these works address different domains, they are unified by a single structural principle. This document introduces the core language of TNA. It defines its primitive concepts, establishes the hierarchy of structural domains, and distinguishes formally proven results from their ontological consequences. In particular, we formulate the Structural Non-Derivability Corollary, which captures the impossibility of deriving instantiated realization from complete axiomatic description. The purpose of this paper is not to introduce new applications but to provide the common grammar from which all previous and future TNA developments can be expressed.
+> **Abstract:** The Theory of Axiomatic Necessity (TNA) establishes a structural language describing the relationship between possibility, formal description, and instantiated realization. This version refines the original formulation by replacing the previously ambiguous notion of Collapse with two logically independent operators: Projection and Coherence Restriction. It further formalizes Coherence Restriction through explicit logical constraints, clarifies the relationship between the metatheoretic reading function and the core grammar, and specifies the exact locus of non-derivability in the operator chain. The purpose of this paper is not to introduce new applications but to provide the common grammar from which all previous and future TNA developments can be expressed.
 
 #### **The Core Invariant:**
-$$N_{\infty} \longrightarrow N_0 \not\vdash N_1$$
+$$N_0 \not\vdash N_1$$
 
-* 📄 **Read Document (Markdown):** [TNA Core Language v1](./TNA%20Core%20Language%20v1%20The%20Structural%20Grammar%20of%20Axiomatic%20Necessity.md)
-* 🔑 **Keywords:** Theory of Axiomatic Necessity, Core Language, Structural Non-Derivability Corollary, Axiomatic Description, Instantiated Realization, Primitive Domains, Metamathematical Necessity, Representation, Instantiation.
+* 📄 **Read Document (Markdown):** [TNA Core Language v2.1](./TNA_Core_Language_v2.1_The_Structural_Grammar_of_Axiomatic_Necessity.md)
+* 🔑 **Keywords:** Theory of Axiomatic Necessity, Core Language, Structural Non-Derivability Corollary, Axiomatic Description, Instantiated Realization, Primitive Domains, Coherence Restriction, Projection, Instantiation.
 
 ---
 
