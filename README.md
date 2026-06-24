@@ -14,7 +14,7 @@ This repository contains the formal research corpus regarding the **Theory of Ax
 #### **The Core Invariant:**
 $$N_0 \not\vdash N_1$$
 
-* 📄 **Read Document (Markdown):** [TNA Core Language v2.1](./TNA_Core_Language_v2.1_The_Structural_Grammar_of_Axiomatic_Necessity.md)
+* 📄 **Read Document (Markdown):** [TNA Core Language v2.1](./TNA_Core_Language_v2_1_The_Structural_Grammar_of_Axiomatic_Necessity.md)
 * 🔑 **Keywords:** Theory of Axiomatic Necessity, Core Language, Structural Non-Derivability Corollary, Axiomatic Description, Instantiated Realization, Primitive Domains, Coherence Restriction, Projection, Instantiation.
 
 ---
