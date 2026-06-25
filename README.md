@@ -4,7 +4,7 @@
 > *"Gödel showed the roof is incomplete; TNA shows the ground is external."*
 
 **Author:** [Claudio Bresciano](https://github.com/cbresciano)  
-**Core Document:** [TNA Core Language v3](./papers/TNA_Core_Language_v3.pdf) | **DOI:** [10.5281/zenodo.20837120](https://zenodo.org/records/20837120)  
+**Core Document:** [TNA Core Language v3](./papers/TNA_Core_Language_v3.1.pdf) | **DOI:** [10.5281/zenodo.20848234](https://zenodo.org/records/20848234)  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
 **Zenodo Collection:** [DOI: 10.5281/zenodo.18098558](https://zenodo.org/records/18098558)
 
