@@ -1,49 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claudio Bresciano - Research Papers</title>
-    <style>
-        body { 
-            font-family: monospace; 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-            line-height: 1.6; 
-            color: #333; 
-        }
-        h1 { 
-            border-bottom: 2px solid #333; 
-            padding-bottom: 10px; 
-        }
-        .paper-item { 
-            margin-bottom: 20px; 
-            padding: 10px 0; 
-            border-bottom: 1px dashed #ccc; 
-        }
-        .paper-title { 
-            font-weight: bold; 
-            font-size: 1.1em; 
-            text-decoration: none; 
-            color: #0066cc; 
-        }
-        .paper-title:hover { 
-            text-decoration: underline; 
-        }
-        .meta { 
-            font-size: 0.9em; 
-            color: #666; 
-            margin-top: 5px; 
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Corpus of Research - TNA Framework</h1>
-    <div id="papers-container">Cargando trayectoria de documentos...</div>
-
-    <script>
+<script>
         // Configuración de tu origen en GitHub
         const USER = "cbresciano"; 
         const REPO = "Papers";            
@@ -55,7 +10,7 @@
             const container = document.getElementById('papers-container');
             try {
                 const response = await fetch(API_URL);
-                if (!response.ok) throw new Error('Fallo en el cierre de la API');
+                if (!response.ok) throw new Error('Fallo en el cierre de la API (Límite de tasa alcanzado)');
                 
                 const files = await response.json();
                 
@@ -73,14 +28,17 @@
                     // Limpiar el nombre del archivo físico para mostrarlo como título
                     const title = file.name.replace(/\.pdf$/i, '').replace(/_/g, ' ').replace(/-/g, ' ');
                     
-                    // Construcción de la URL de visualización web directa a través del visor de Google Pages
+                    // URL de visualización web directa en el navegador
                     const pdfUrl = `https://${USER}.github.io/${REPO}/${file.name}`;
-                    const viewerUrl = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
                     
                     const paperHtml = `
                         <div class="paper-item">
-                            <a class="paper-title" href="${viewerUrl}" target="_blank">${title}</a>
-                            <div class="meta">Archivo: ${file.name} | Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB</div>
+                            <a class="paper-title" href="${pdfUrl}" target="_blank">${title}</a>
+                            <div class="meta">
+                                Archivo: ${file.name} | 
+                                Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB | 
+                                <a href="${pdfUrl}" download style="color: #666; text-decoration: underline;">Descargar directo</a>
+                            </div>
                         </div>
                     `;
                     container.innerHTML += paperHtml;
@@ -93,5 +51,3 @@
 
         fetchPapers();
     </script>
-</body>
-</html>
