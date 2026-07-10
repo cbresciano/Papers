@@ -1,53 +1,35 @@
-<script>
-        // Configuración de tu origen en GitHub
-        const USER = "cbresciano"; 
-        const REPO = "Papers";            
-        const PATH = "";                  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Claudio Bresciano - Research Papers</title>
+    <style>
+        body { font-family: monospace; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .paper-item { margin-bottom: 15px; padding: 5px 0; border-bottom: 1px dashed #ccc; }
+        .paper-title { font-weight: bold; color: #0066cc; text-decoration: none; }
+        .paper-title:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Corpus of Research - TNA Framework</h1>
+    <div id="list">Cargando...</div>
 
-        const API_URL = `https://api.github.com/repos/${USER}/${REPO}/contents/${PATH}`;
-
-        async function fetchPapers() {
-            const container = document.getElementById('papers-container');
-            try {
-                const response = await fetch(API_URL);
-                if (!response.ok) throw new Error('Fallo en el cierre de la API (Límite de tasa alcanzado)');
-                
-                const files = await response.json();
-                
-                // Filtrar solo los archivos PDF de la raíz
-                const pdfFiles = files.filter(file => file.name.toLowerCase().endsWith('.pdf'));
-
-                if (pdfFiles.length === 0) {
-                    container.innerHTML = "No se encontraron archivos PDF en la raíz del repositorio.";
-                    return;
-                }
-
-                container.innerHTML = ''; 
-
-                pdfFiles.forEach(file => {
-                    // Limpiar el nombre del archivo físico para mostrarlo como título
-                    const title = file.name.replace(/\.pdf$/i, '').replace(/_/g, ' ').replace(/-/g, ' ');
-                    
-                    // URL de visualización web directa en el navegador
-                    const pdfUrl = `https://${USER}.github.io/${REPO}/${file.name}`;
-                    
-                    const paperHtml = `
-                        <div class="paper-item">
-                            <a class="paper-title" href="${pdfUrl}" target="_blank">${title}</a>
-                            <div class="meta">
-                                Archivo: ${file.name} | 
-                                Tamaño: ${(file.size / 1024 / 1024).toFixed(2)} MB | 
-                                <a href="${pdfUrl}" download style="color: #666; text-decoration: underline;">Descargar directo</a>
-                            </div>
-                        </div>
-                    `;
-                    container.innerHTML += paperHtml;
-                });
-
-            } catch (error) {
-                container.innerHTML = `Error en la lectura del soporte local: ${error.message}`;
-            }
-        }
-
-        fetchPapers();
+    <script>
+        const USER = "cbresciano", REPO = "Papers";
+        fetch(`https://api.github.com/repos/${USER}/${REPO}/contents/`)
+            .then(res => res.json())
+            .then(files => {
+                const pdfs = files.filter(f => f.name.endsWith('.pdf'));
+                document.getElementById('list').innerHTML = pdfs.map(f => `
+                    <div class="paper-item">
+                        <a class="paper-title" href="https://${USER}.github.io/${REPO}/${f.name}" target="_blank">
+                            ${f.name.replace(/\.pdf$/i, '').replace(/_/g, ' ').replace(/-/g, ' ')}
+                        </a>
+                    </div>
+                `).join('');
+            })
+            .catch(() => document.getElementById('list').innerText = "Error al cargar el soporte local.");
     </script>
+</body>
+</html>
