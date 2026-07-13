@@ -7,7 +7,9 @@
 **Core Document:** [TNA Core Language v3](./papers/TNA_Core_Language_v3.2.pdf) | **DOI:** [10.5281/zenodo.20966237](https://zenodo.org/records/20966237)  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
 **Zenodo Collection:** [DOI: 10.5281/zenodo.18098558](https://zenodo.org/records/18098558)
-TNA structural grammar.png
+<p align="center">
+  <img src="TNA structural gramar.png" alt="Gramática Estructural de la TNA" width="600"/>
+</p>
 ---
 
 ##  For AI Agents, LLMs, and Researchers
