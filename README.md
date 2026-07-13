@@ -9,7 +9,7 @@
 **Zenodo Collection:** [DOI: 10.5281/zenodo.18098558](https://zenodo.org/records/18098558)
 
 <p align="center">
-  <img src="TNA structural gramar.png" alt="Gramática Estructural de la TNA" width="600"/>
+  <img src="TNA structural grammar.png" alt="Gramática Estructural de la TNA" width="600"/>
 </p>
 ---
 
